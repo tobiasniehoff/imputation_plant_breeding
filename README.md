@@ -40,7 +40,7 @@ The R scripts will create directories. Results are stored in a directory with th
 
 
 ### Finding software
-The R scripts using AlphaPlantImpute2 expect that AlphaPlantImpute2 is added to the `$PATH` variable. Instructions how to add a directory to the `$PATH` variable can be found [here](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/). Make sure you have at least pythin version 3.7 and recent versions of NumPy and Numba installed.
+The R scripts using AlphaPlantImpute2 expect that AlphaPlantImpute2 is added to the `$PATH` variable. Instructions how to add a directory to the `$PATH` variable can be found [here](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/). Make sure you have at least python version 3.7 and recent versions of NumPy and Numba installed.
 
 The R scripts using Beagle will search for the Beagle file in the directory of the script where it is executed and in the parent directory. Most straightforward is to store the Beagle files in the folder `imputation workflow`. Beagle 5.1 (18May20.d20) can be downloaded [here](https://faculty.washington.edu/browning/beagle/b5_1.html), Beagle 5.2 (28Jun21.220) [here](https://faculty.washington.edu/browning/beagle/old.beagle.html) and Beagle 5.3 (08Feb22.fa4) can be downloaded [here](https://faculty.washington.edu/browning/beagle/beagle.html).
 
