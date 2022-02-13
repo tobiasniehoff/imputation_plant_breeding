@@ -1,3 +1,79 @@
-# imputation_plant_breeding
+# Low-density marker imputation in plant breeding populations
 
-under construction
+This is the repository for scripts used in our low-density marker imputation manuscript.
+
+## data
+The folder `data` contains simulated data to test the workflows.
+
+**make_simulated_data.R** is an R script to produce the simulated data mimicking sugar beet with the R package MoBPS.
+
+**simulated_data.vcf.gz** is an vcf file with true full and phased marker data of 36 families each with 50 offspring lines.
+
+**simulated_data_ped.txt** is a text file that denotes the pedgree of the individuals.
+
+**simulated_map** is a text file with the genetic map of all 20000 markers on all 9 chromosomes.
+
+**simulated_map3.txt** is a text file with the genetic map of 3000 markers that are on the 3k low-density panel.
+
+**simulated_map2.txt** is a text file with the genetic map of 2000 markers that are on the 2k low-density panel.
+
+**simulated_map1.txt** is a text file with the genetic map of 1000 markers that are on the 1k low-density panel.
+
+## imputation workflows
+The folder `imputation workflows` contains R scripts with which imputation can be done from within R. The scripts are reading in a parameter table that is stored in the folder `input parameter tables`.The scripts were written to work on a cluster with the lines in the input parameter table executed in parallel. Users without access to a cluster can test the scripts by modifying the R scripts at the positions indicated with **MODIFY_HERE** in the code.
+
+
+### R scripts
+The R scripts will create directories. Results are stored in a directory with the same name as the input parameter file and a time stamp.
+
+**API2_workflow.R** is the R script to use if imputing with AlphaPlantImpute2.
+
+**BEAGLE_workflow.R** is the R script to use if imputing with Beagle version 5.1.
+
+**BEAGLE52_workflow.R** is the R script to use if imputing with Beagle version 5.2.
+
+**BEAGLE53_workflow.R** is the R script to use if imputing with Beagle version 5.3.
+
+**single-genotype_BEAGLE_workflow.R** is the R script to use if using the single-genotype imputation approach with Beagle version 5.1.
+
+**BEAGLE_API2_workflow.R** is the R script to use for the Beagle+API2 approach. Beagle version 5.1 is used.
+
+
+### Finding software
+The R scripts using AlphaPlantImpute2 expect that AlphaPlantImpute2 is added to the `$PATH` variable. Instructions how to add a directory to the `$PATH` variable can be found [here](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/). Make sure you have at least pythin version 3.7 and recent versions of NumPy and Numba installed.
+
+The R scripts using Beagle will search for the Beagle file in the directory of the script where it is executed and in the parent directory. Most straightforward is to store the Beagle files in the folder `imputation workflow`. Beagle 5.1 (18May20.d20) can be downloaded [here](https://faculty.washington.edu/browning/beagle/b5_1.html), Beagle 5.2 (28Jun21.220) [here](https://faculty.washington.edu/browning/beagle/old.beagle.html) and Beagle 5.3 (08Feb22.fa4) can be downloaded [here](https://faculty.washington.edu/browning/beagle/beagle.html).
+
+### slurm jobs
+The `.sh` scripts contain the job description for slurm jobs. The parameter table to use (stored in folder `input parameter tables` has to be specified in the shell scripts.
+
+**API2_workflow.sh** is the SLURM job description for AlphaPlantImpute2 imputation.
+
+**BEAGLE_workflow.sh** is the SLURM job description for Beagle version 5.1 imputation.
+
+**BEAGLE52_workflow.sh** is the SLURM job description for Beagle version 5.2 imputation.
+
+**BEAGLE53_workflow.sh** is the SLURM job description for Beagle version 5.3 imputation.
+
+**single-genotype_BEAGLE_workflow.sh** is the SLURM job description for the single-genotype imputation approach with Beagle.
+
+**BEAGLE_API2_workflow.sh** is the SLURM job description for the Beagle+API2 approach.
+
+## input parameter tables
+Input parameter tables are stored in the folder with the same name. The procedure and the input parameters can be specified with the input parameter tables in excel. Names of the tables are self-explanatory.
+
+## R functions
+This folder stored R scripts in which functions are defined that are sourced by the workflows.
+
+**analysis.R** contains functions that analyze data sets.
+
+**API2_functions.R** contains functions specific for AlphaPlantImpute2 workflows.
+
+**BEAGLE_functions.R** contains functions that are specific for Beagle workflows and for reading and writing .vcf files.
+
+**general_functions.R** contains functions that are used by all scripts.
+
+**simulation_functions.R** contains functions that are used for simulation of data in the worklfows using the R package `Meiosis`.
+
+## Quality measures
+The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci`.
