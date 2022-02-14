@@ -40,12 +40,12 @@ The R scripts will create directories. Results are stored in a directory with th
 
 
 ### Finding software
-The R scripts using AlphaPlantImpute2 expect that AlphaPlantImpute2 is added to the `$PATH` variable. Instructions how to add a directory to the `$PATH` variable can be found [here](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/). Make sure you have at least python version 3.7 and recent versions of NumPy and Numba installed.
+The R scripts using AlphaPlantImpute2 expect that AlphaPlantImpute2 is added to the `$PATH` variable. AlphaPlantImpute2 can be downloaded [here](https://github.com/AlphaGenes/AlphaPlantImpute2). Make sure you have at least python version 3.7 and recent versions of NumPy and Numba installed. Instructions how to add a directory to the `$PATH` variable can be found [here](https://linuxize.com/post/how-to-add-directory-to-path-in-linux/).
 
 The R scripts using Beagle will search for the Beagle file in the directory of the script where it is executed and in the parent directory. Most straightforward is to store the Beagle files in the folder `imputation workflow`. Beagle 5.1 (18May20.d20) can be downloaded [here](https://faculty.washington.edu/browning/beagle/b5_1.html), Beagle 5.2 (28Jun21.220) [here](https://faculty.washington.edu/browning/beagle/old.beagle.html) and Beagle 5.3 (08Feb22.fa4) can be downloaded [here](https://faculty.washington.edu/browning/beagle/beagle.html).
 
-### slurm jobs
-The `.sh` scripts contain the job description for slurm jobs. The parameter table to use (stored in folder `input parameter tables` has to be specified in the shell scripts.
+### SLURM jobs
+The `.sh` scripts contain the job description for SLURM jobs. The parameter table to use (stored in folder `input parameter tables` has to be specified in the shell scripts.
 
 **API2_workflow.sh** is the SLURM job description for AlphaPlantImpute2 imputation.
 
@@ -76,4 +76,4 @@ This folder stored R scripts in which functions are defined that are sourced by 
 **simulation_functions.R** contains functions that are used for simulation of data in the worklfows using the R package `Meiosis`.
 
 ## Quality measures
-The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci`.
+The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci` of the output tables created by the workflows.
