@@ -1,6 +1,6 @@
 # Low-density marker imputation in plant breeding populations
 
-This is the repository for scripts used in our low-density marker imputation manuscript.
+This is the repository for scripts used in our low-density marker imputation manuscript. If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
 
 ## data
 The folder `data` contains simulated data to test the workflows.
