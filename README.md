@@ -31,7 +31,7 @@ In brief, simulation was done as follows:
 
 **simulated_data_ped.txt** is a text file that denotes the pedgree of the individuals.
 
-**simulated_map** is a text file with the genetic map of all 20000 markers on all 9 chromosomes.
+**simulated_map.txt** is a text file with the genetic map of all 20000 markers on all 9 chromosomes.
 
 **simulated_map3.txt** is a text file with the genetic map of 3000 markers that are on the 3k low-density panel.
 
