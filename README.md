@@ -3,7 +3,27 @@
 This is the repository for scripts used in our low-density marker imputation manuscript. If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
 
 ## data
-The folder `data` contains simulated data to test the workflows.
+The folder `data` contains a simple simulated data set to test the workflows. The data set does not contain genetic data as used in our study. It merely serves to provide input data of the same format as used in our study. The data set was simulated with MoBPS. 
+In brief, simulation was done as follows:
+ - 63000 SNPs were simulated over 9 chromosomes each with length of 0.8 Morgan
+ - 2700 SNPs were assigned a QTL effect sampled from a Gamma distribution with shape parameter 0.4
+ - 1000 founders a simulated
+ - 100 distinct generations of random mating starting with the founders were simulated with a linearly decreasing population size to 100 after 100 generations
+ - next, the population expanded rapidly linearly from 100 to 1000 plants in 4 generations
+ - next, 10 generations of breeding activities are simulated:
+   - based on phenotypic selection
+   - with heritability of 0.5
+   - selection of the 30 best plants out of 2000
+   - selection based on F3 plants
+   - random mating
+ - data set generation:
+   - 20,000 markers with a minor allele frequency over 0.01 were randomly sampled and used for the 20k array
+   - 3,000 out of the 20,000 SNPs were randomly sampled for the 3k array
+   - 2,000 out of the 3,000 SNPs  were randomly sampled for the 2k array
+   - 1,000 out of the 2,000 SNPs  were randomly sampled for the 1k array
+   - 30 plants of the last generation were randomly sampled and mated to obtain F1 plants
+   - these were selfed twice to get F3 plants (these are used as parents later)
+   - the workflows simulate offspring based on these parents anew but we also provide 50 simulated F3 offspring lines per family in the data set
 
 **make_simulated_data.R** is an R script to produce the simulated data mimicking sugar beet with the R package MoBPS.
 
