@@ -89,7 +89,7 @@ This folder stored R scripts in which functions are defined that are sourced by 
 
 **API2_functions.R** contains functions specific for AlphaPlantImpute2 workflows.
 
-**BEAGLE_functions.R** contains functions that are specific for Beagle workflows and for reading and writing .vcf files.
+**BEAGLE_functions.R** contains functions that are specific for Beagle workflows and for reading and writing .vcf files. The imputation functions are written to only work on Windows or Linux systems. If you are on a different operation system, modify the function 'impute_BEAGLE[5.1|5.3]()'.
 
 **general_functions.R** contains functions that are used by all scripts.
 
