@@ -93,11 +93,11 @@ This folder stored R scripts in which functions are defined that are sourced by 
 
 **API2_functions.R** contains functions specific for AlphaPlantImpute2 workflows.
 
-**BEAGLE_functions.R** contains functions that are specific for Beagle workflows and for reading and writing .vcf files. The imputation functions are written to only work on Windows or Linux systems. If you are on a different operation system, modify the function 'impute_BEAGLE\[5.1|5.3\]()'.
+**BEAGLE_functions.R** contains functions that are specific for Beagle workflows and for reading and writing .vcf files. The imputation functions are written to only work on Windows or Linux systems. If you are on a different operation system, modify the function `impute_BEAGLE\[5.1|5.3\]()`.
 
 **general_functions.R** contains functions that are used by all scripts.
 
-**simulation_functions.R** contains functions that are used for simulation of data in the worklfows using the R package `Meiosis`.
+**simulation_functions.R** contains functions that are used for simulation of data in the workflows using the R package `Meiosis`.
 
 ## Quality measures
 The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci` of the output tables created by the workflows. The output tables are written in `.txt` format and `.xlsx` in a new directory created by the workflows with the same name as the input parameter table. The new directory will be created in the directory named `imputation workflows`.
