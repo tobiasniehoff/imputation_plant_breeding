@@ -41,7 +41,8 @@ In brief, simulation was done as follows:
 
 ## imputation workflows
 The folder `imputation workflows` contains R scripts with which imputation can be done from within R. The scripts are reading in a parameter table that is stored in the folder `input parameter tables`.The scripts were written to work on a cluster with the lines in the input parameter table executed in parallel. Users without access to a cluster can test the scripts by modifying the R scripts at the positions indicated with **MODIFY_HERE** in the code.
-
+The imputation workflows will create a new folder for every replicate (row in excel input parameter tables). After a run is finished, its directory is deleted.
+The output of the workflows are .txt. and .xlsx files (read section 'Quality measures').
 
 ### R scripts
 The R scripts will create directories. Results are stored in a directory with the same name as the input parameter file and a time stamp.
@@ -99,4 +100,4 @@ This folder stored R scripts in which functions are defined that are sourced by 
 **simulation_functions.R** contains functions that are used for simulation of data in the worklfows using the R package `Meiosis`.
 
 ## Quality measures
-The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci` of the output tables created by the workflows.
+The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column 'GenotypeMeanAccuracy_whole_pop_all_loci' of the output tables created by the workflows. The output tables are written in .txt format and .xlsx in a new directory created by the workflows with the same name as the input parameter table. The new directory will be created in the directory named 'imputation workflows'.
