@@ -3,7 +3,7 @@
 This is the repository for scripts used in our low-density marker imputation manuscript. If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
 
 ## data
-The folder `data` contains a simple simulated data set to test the workflows. The data set does not contain genetic data as used in our study. It merely serves to provide input data of the same format as used in our study. The data set was simulated with MoBPS. 
+The folder `data` contains a simple simulated data set to test the workflows. The data set does not contain genetic data as used in our study. It merely serves to provide input data of the same format as used in our study. The data set was simulated with MoBPS (https://github.com/tpook92/MoBPS). 
 In brief, simulation was done as follows:
  - 63000 SNPs were simulated over 9 chromosomes each with length of 0.8 Morgan
  - 2700 SNPs were assigned a QTL effect sampled from a Gamma distribution with shape parameter 0.4
@@ -80,7 +80,10 @@ The `.sh` scripts contain the job description for SLURM jobs. The parameter tabl
 **BEAGLE_API2_workflow.sh** is the SLURM job description for the Beagle+API2 approach.
 
 ## input parameter tables
-Input parameter tables are stored in the folder with the same name. The procedure and the input parameters can be specified with the input parameter tables in excel. Names of the tables are self-explanatory.
+Input parameter tables are stored in the folder with the same name. The procedure and the input parameters can be specified with the input parameter tables in excel.  Names of the tables are self-explanatory. Functionality of parameters is explained in the excel files. 
+The parameters can in principle specified to perform tests not presented in our manuscript. 
+For instance, imputation of low-coverage data sets can be simulated by using homozygous parent and offspring population types (e.g., DH or F\[high number\]), genotyping all offspring and parents at high-density and setting the fraction of randomly missing calls per individual to the desired fraction (e.g., 0.5).
+Simple quality control can be used by specifying minimum values for the minor allele frequency (MAF) and/or minor allele count (MAC). These filteres are applied to all lines before any phasing or imputation.
 
 ## R functions
 This folder stored R scripts in which functions are defined that are sourced by the workflows.
