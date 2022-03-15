@@ -101,3 +101,6 @@ This folder stored R scripts in which functions are defined that are sourced by 
 
 ## Quality measures
 The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci` of the output tables created by the workflows. The output tables are written in `.txt` format and `.xlsx` in a new directory created by the workflows with the same name as the input parameter table. The new directory will be created in the directory named `imputation workflows`.
+
+## Filtering raw data
+In our study, we used real marker data as input to capture the linkage structure of a contemporary breeding program. Before this data was phased and imputed, lines with much missing information and excess in mendelian errors were removed. Further explaination is given in the script (**filter_true_data_script.R**). Note that we do not provide the real data in this repository for proprietary reasons.
