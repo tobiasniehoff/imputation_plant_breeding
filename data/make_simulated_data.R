@@ -6,7 +6,7 @@ setwd("../R functions")
 
 source("analysis.R")
 source("general_functions.R")
-source("BEAGLE_functions.R") # really needed?
+source("BEAGLE_functions.R")
 source("simulation_functions.R")
 
 setwd(original_directory)
