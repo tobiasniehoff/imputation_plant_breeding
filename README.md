@@ -1,6 +1,6 @@
 # Low-density marker imputation in plant breeding populations
 
-This is the repository for scripts used in our low-density marker imputation manuscript. If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
+This is the repository for scripts used in our low-density marker imputation manuscript (https://doi.org/10.1101/2022.03.29.486246). If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
 
 ## data
 The folder `data` contains a simple simulated data set to test the workflows. The data set does not contain genetic data as used in our study. It merely serves to provide input data of the same format as used in our study. The data set was simulated with MoBPS (https://github.com/tpook92/MoBPS). 
@@ -97,7 +97,7 @@ This folder stored R scripts in which functions are defined that are sourced by 
 
 **general_functions.R** contains functions that are used by all scripts.
 
-**simulation_functions.R** contains functions that are used for simulation of data in the workflows using the R package `Meiosis`.
+**simulation_functions.R** contains functions that are used for simulation of data in the workflows using the R package `Meiosis`. \[If you would like to visualize some population types, you can do so with our shiny app **Genome Visualizator** (https://yvancarhel.shinyapps.io/tobiasniehoff_GenomeVisualizator/). It uses the same functions as those defined in this `.R` script. The shiny app was written by my good friend Yvan Carhel and me. It is not part of the study.\]
 
 ## Quality measures
 The file **parameter_finding3.xlsx** is empty and only contains the names for the quality parameters. The accuracy reported in the manuscript is written in the column `GenotypeMeanAccuracy_whole_pop_all_loci` of the output tables created by the workflows. The output tables are written in `.txt` format and `.xlsx` in a new directory created by the workflows with the same name as the input parameter table. The new directory will be created in the directory named `imputation workflows`.
