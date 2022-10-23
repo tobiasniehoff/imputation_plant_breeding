@@ -1,8 +1,8 @@
 # Low-density marker imputation in plant breeding populations
 
-This is the repository for scripts used in our low-density marker imputation manuscript (https://doi.org/10.1101/2022.03.29.486246). If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
+This is the repository for scripts used in our low-density marker imputation manuscript (https://doi.org/10.1002/tpg2.20257). If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
 
-## data
+## Test data
 The folder `data` contains a simple simulated data set to test the workflows. The data set does not contain genetic data as used in our study. It merely serves to provide input data of the same format as used in our study. The data set was simulated with MoBPS (https://github.com/tpook92/MoBPS). 
 In brief, simulation was done as follows:
  - 63000 SNPs were simulated over 9 chromosomes each with length of 0.8 Morgan
@@ -39,7 +39,7 @@ In brief, simulation was done as follows:
 
 **simulated_map1.txt** is a text file with the genetic map of 1000 markers that are on the 1k low-density panel.
 
-## imputation workflows
+## Imputation workflows
 The folder `imputation workflows` contains R scripts with which imputation can be done from within R. The scripts are reading in a parameter table that is stored in the folder `input parameter tables`.The scripts were written to work on a cluster with the lines in the input parameter table executed in parallel. Users without access to a cluster can test the scripts by modifying the R scripts at the positions indicated with **MODIFY_HERE** in the code.
 The imputation workflows will create a new folder for every replicate (row in excel input parameter tables). After a run is finished, its directory is deleted.
 The output of the workflows are `.txt` and `.xlsx` files (read section **Quality measures**).
@@ -80,7 +80,7 @@ The `.sh` scripts contain the job description for SLURM jobs. The parameter tabl
 
 **BEAGLE_API2_workflow.sh** is the SLURM job description for the Beagle+API2 approach.
 
-## input parameter tables
+## Input parameter tables
 Input parameter tables are stored in the folder with the same name. The procedure and the input parameters can be specified with the input parameter tables in excel.  Names of the tables are self-explanatory. Functionality of parameters is explained in the excel files. 
 The parameters can in principle specified to perform tests not presented in our manuscript. 
 For instance, imputation of low-coverage data sets can be simulated by using homozygous parent and offspring population types (e.g., DH or F\[high number\]), genotyping all offspring and parents at high-density and setting the fraction of randomly missing calls per individual to the desired fraction (e.g., 0.5).
