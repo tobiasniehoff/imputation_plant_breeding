@@ -1,6 +1,6 @@
 # Low-density marker imputation in plant breeding populations
 
-This is the repository for scripts used in our low-density marker imputation manuscript (https://doi.org/10.1002/tpg2.20257). If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
+This is the repository for scripts used in our paper "Imputation of low-density marker chip data in plant breeding: Evaluation of methods based on sugar beet" (https://doi.org/10.1002/tpg2.20257). If more details are needed, please contact [Tobias](tobias.niehoff@wur.nl).
 
 ## Test data
 The folder `data` contains a simple simulated data set to test the workflows. The data set does not contain genetic data as used in our study. It merely serves to provide input data of the same format as used in our study. The data set was simulated with MoBPS (https://github.com/tpook92/MoBPS). 
